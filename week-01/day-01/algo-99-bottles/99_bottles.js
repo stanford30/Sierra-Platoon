@@ -20,5 +20,4 @@ function bottleSong() {
   arr.push(ending);
   console.log(arr.join('\n'));
 }
-
 bottleSong();

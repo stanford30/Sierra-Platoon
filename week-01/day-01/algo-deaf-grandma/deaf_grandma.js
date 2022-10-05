@@ -3,7 +3,6 @@ function deafGrandma() {
   let goodbye = 0;
   while (running) {
     let x = prompt();
-    console.log(x);
     x = x.toString();
 
     if (x === 'GOODBYE!') {
