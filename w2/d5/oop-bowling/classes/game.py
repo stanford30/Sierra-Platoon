@@ -1,2 +1,3 @@
 class Game:
-    pass
+    def __init__(self, players: list):
+        self.players = players
