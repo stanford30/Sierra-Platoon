@@ -1,11 +1,71 @@
 /* styles.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
 body {
-  font-family: "Helvetica Neue", sans-serif;
+  display: flex;
+  justify-content: center;
+
+  background-color: #222;
+
+  color: #ddd;
+
+  font-family: sans-serif;
   font-weight: 300;
-  text-align: center;
+
+  overflow: hidden;
+  /* text-align: center; */
 }
 
 h1 {
-  font-weight: 400
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+/* containers */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+
+  height: 68rem;
+
+  margin-top: 3.6rem;
+  row-gap: 12rem;
+
+  width: 96rem;
 }
 
+.main-container nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* buttons */
+.btn {
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+
+  padding: 0.4rem 0.8rem;
+}
+
+.btn:hover {
+  background-color: bisque;
+}
+
+.btn:active {
+  transform: translateY(0.2rem);
+  /* transition-duration: 0.4s; */
+  transition: all 0.05s;
+}
+
+.hidden {
+  display: none;
+}
