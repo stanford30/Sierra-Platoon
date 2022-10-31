@@ -5,6 +5,7 @@ from django.db import models
 # import os.path
 import csv
 import os
+import json
 
 
 class Person:
@@ -21,17 +22,18 @@ class Person:
 
         people = []
 
-        with open(file_path) as csvfile:
-            reader = csv.DictReader(csvfile)
-            for row in reader:
+        with open(file_path) as jsonfile:
+            # reader = csv.DictReader(csvfile)
+            json_data = json.load(jsonfile)
+            for row in json_data:
                 person = cls(**row)
+                # print(person)
                 people.append(person)
-
         return people
 
 
 class Student(Person):
-    DATA_FILE = "../data/students.csv"
+    DATA_FILE = "../data/students.json"
 
     def __init__(self, name, age, password, role, school_id):
         super().__init__(name, age, password, role)
@@ -42,7 +44,7 @@ class Student(Person):
 
 
 class Staff(Person):
-    DATA_FILE = "../data/staff.csv"
+    DATA_FILE = "../data/staff.json"
 
     def __init__(self, name, age, password, role, employee_id):
         super().__init__(name, age, password, role)
@@ -71,3 +73,12 @@ class School:
                 return staff
 
         return None
+
+
+# school = School("test")
+# # print(school.staff)
+# for staff in school.staff:
+#     print(dir(staff))
+#     print(staff.__dict__)
+# for student in school.students:
+#     print(student.school_id)
