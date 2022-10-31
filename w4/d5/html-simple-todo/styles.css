@@ -1,0 +1,48 @@
+/* * {
+  color: pink;
+} */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  align-items: center;
+
+  display: flex;
+  flex-direction: column;
+  font-size: 1.8rem;
+
+  justify-content: center;
+
+  margin-top: 12rem;
+  row-gap: 3.2rem;
+}
+.strike {
+  text-decoration: line-through;
+  /* text-decoration-color: aquamarine; */
+}
+ul {
+  align-items: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 1rem;
+}
+
+li {
+  cursor: pointer;
+
+  list-style: none;
+}
+.add-item {
+  display: flex;
+  flex-direction: column;
+}
+.add-item input {
+  padding: 1.2rem;
+}
