@@ -1,0 +1,8 @@
+.pokemon_sprites {
+  display: flex;
+}
+
+.pokemon_sprite {
+  height: 6rem;
+  width: 6rem;
+}
