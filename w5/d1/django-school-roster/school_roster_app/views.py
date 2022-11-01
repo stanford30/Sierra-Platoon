@@ -19,7 +19,8 @@ def list_staff(request):
 
 def staff_detail(request, employee_id):
     staff = my_school.find_staff_by_id(employee_id)
-    return render(request, "pages/staff-detail.html", {"staff": staff})
+
+    return render(request, "pages/staff-detail.html", {"staff": staff.__dict__})
 
 
 def list_students(request):
@@ -28,5 +29,7 @@ def list_students(request):
     return render(request, "pages/students.html", context)
 
 
-def student_detail(request, student_id):
-    pass  # implement
+def student_detail(request, school_id):
+    student = my_school.find_student_by_id(school_id)
+
+    return render(request, "pages/student-detail.html", {"student": student.__dict__})

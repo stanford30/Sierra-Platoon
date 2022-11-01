@@ -9,11 +9,12 @@
   <body style="display: flex; column-gap: 26px">
     {% for staff in all_staff %}
     <div>
-      <p>Name: {{staff.name}}</p>
+      <a href="./{{staff.employee_id}}">{{staff.name}}</a>
+      <!-- <p>Name: {{staff.name}}</p>
       <p>Age: {{staff.age}}</p>
       <p>role: {{staff.role}}</p>
       <p>employee_id: {{staff.employee_id}}</p>
-      <p>password: {{staff.password}}</p>
+      <p>password: {{staff.password}}</p> -->
     </div>
     {% endfor %}
   </body>

@@ -75,10 +75,10 @@ class School:
         return None
 
 
-# school = School("test")
-# # print(school.staff)
-# for staff in school.staff:
-#     print(dir(staff))
-#     print(staff.__dict__)
+school = School("test")
+# print(school.staff)
+for staff in school.staff:
+    print(staff)
+
 # for student in school.students:
 #     print(student.school_id)

@@ -4,13 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Detail</title>
+    <title>Staff Detail</title>
+    <script></script>
   </head>
   <body>
-    <p>Name: {{staff.name}}</p>
+    <!-- <p>Name: {{staff.name}}</p>
     <p>Age: {{staff.age}}</p>
     <p>role: {{staff.role}}</p>
     <p>employee_id: {{staff.employee_id}}</p>
-    <p>password: {{staff.password}}</p>
+    <p>password: {{staff.password}}</p> -->
+    {% for key, value in staff.items %}
+    <p>{{key}} - {{value}}</p>
+    {% endfor %}
   </body>
 </html>

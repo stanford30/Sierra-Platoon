@@ -6,15 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student List</title>
   </head>
-  <body style="display: flex; column-gap: 26px">
+  <body style="display: flex; column-gap: 26px; flex-wrap:wrap">
     {% for student in all_students %}
     <div>
-      <p>Name: {{student.name}}</p>
-      <p>Age: {{student.age}}</p>
-      <p>role: {{student.role}}</p>
-      <p>school_id: {{student.school_id}}</p>
-      <p>password: {{student.password}}</p>
+      <a href= {% url 'student_detail' student.school_id %}>{{student.name}}</a>
     </div>
     {% endfor %}
+
   </body>
 </html>
