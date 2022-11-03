@@ -37,11 +37,12 @@ def rectanglePerimeter(request):
     try:
         length = int(request.GET.get("length"))
         width = int(request.GET.get("width"))
+        pokemon_type = str(request.GET.get("type"))
     except:
         response = HttpResponse()
         response.status_code = 400
         return response
-
+    print(pokemon_type)
     p = 2 * (length + width)
     return HttpResponse(p)
 
