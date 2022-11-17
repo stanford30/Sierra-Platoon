@@ -10,7 +10,7 @@ function DisplayWord(props) {
     }
   }
 
-  return <h1>{returnHTML.map((letter) => letter)}</h1>;
+  return <p>{returnHTML.map((letter) => letter)}</p>;
 }
 
 export default DisplayWord;
