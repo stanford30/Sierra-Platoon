@@ -1,7 +1,20 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Door from './Door';
+class Game extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      prizeDoor: Math.floor(Math.random() * props.numDoors) + 1,
+      result: null,
+    };
+  }
 
-function Game(props) {
+  updateResult(door) {
+    if (this.state.result !== null) return;
+    this.setState({ result: door === this.state.prizeDoor });
+  }
+}
+function Game1(props) {
   // states
   const [prizeDoor /*setPrizeDoor*/] = useState(
     Math.floor(Math.random() * props.numDoors) + 1

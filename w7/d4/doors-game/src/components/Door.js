@@ -11,8 +11,8 @@ class Door extends React.Component {
   }
 
   toggleDoor() {
-    console.log(this.opened);
-    console.log(this.state.opened);
+    // console.log(this.opened);
+    // console.log(this.state.opened);
 
     if (this.props.result !== null) return;
 
