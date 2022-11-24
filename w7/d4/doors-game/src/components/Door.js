@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+// import React, { useState } from 'react';
 import GiftImage from '../images/gift.png';
 
 class Door extends React.Component {
