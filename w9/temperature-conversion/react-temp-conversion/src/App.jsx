@@ -66,77 +66,78 @@ const App = () => {
     </div>
   );
 };
-class App1 extends Component {
-  // states
-  state = {
-    temperature: null,
-    zipCode: '',
-  };
 
-  // effects
-  async getTemperature() {
-    try {
-      console.log('obtaining temperature...');
-      let response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?zip=${this.state.zipCode},us&appid=${myOpenWeatherApiKey}`
-      );
+// class App1 extends Component {
+//   // states
+//   state = {
+//     temperature: null,
+//     zipCode: '',
+//   };
 
-      if (response.ok) {
-        let data = await response.json();
-        if (data) {
-          this.setState({ temperature: data.main.temp });
-        }
-      } else {
-        this.setState({ temperature: null });
-      }
-    } catch (e) {
-      console.error(e);
-    }
-  }
+//   // effects
+//   async getTemperature() {
+//     try {
+//       console.log('obtaining temperature...');
+//       let response = await fetch(
+//         `https://api.openweathermap.org/data/2.5/weather?zip=${this.state.zipCode},us&appid=${myOpenWeatherApiKey}`
+//       );
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.zipCode !== this.state.zipCode) {
-      this.getTemperature();
-    }
-  }
+//       if (response.ok) {
+//         let data = await response.json();
+//         if (data) {
+//           this.setState({ temperature: data.main.temp });
+//         }
+//       } else {
+//         this.setState({ temperature: null });
+//       }
+//     } catch (e) {
+//       console.error(e);
+//     }
+//   }
 
-  // handlers
-  updateZipCode = (newZipCode) => {
-    this.setState({ zipCode: newZipCode });
-  };
+//   componentDidUpdate(prevProps, prevState) {
+//     if (prevState.zipCode !== this.state.zipCode) {
+//       this.getTemperature();
+//     }
+//   }
 
-  // render
-  renderDisplay() {
-    // don't show any display if no zip code has been entered
-    if (!this.state.zipCode) {
-      return null;
-    }
-    // show an error if we don't get back valid data
-    else if (!this.state.temperature) {
-      return (
-        <ErrorDisplay message="Unable to get temperature information from your zip code." />
-      );
-    }
+//   // handlers
+//   updateZipCode = (newZipCode) => {
+//     this.setState({ zipCode: newZipCode });
+//   };
 
-    return (
-      <div className="App">
-        <TemperatureDisplay tempInKelvin={this.state.temperature} />
-      </div>
-    );
-  }
+//   // render
+//   renderDisplay() {
+//     // don't show any display if no zip code has been entered
+//     if (!this.state.zipCode) {
+//       return null;
+//     }
+//     // show an error if we don't get back valid data
+//     else if (!this.state.temperature) {
+//       return (
+//         <ErrorDisplay message="Unable to get temperature information from your zip code." />
+//       );
+//     }
 
-  render() {
-    return (
-      <div className="App">
-        <h2>Temperature Conversion App</h2>
-        <InputZipCode
-          updateZipCode={this.updateZipCode}
-          buttonText="Get Temperature"
-        />
-        {this.renderDisplay()}
-      </div>
-    );
-  }
-}
+//     return (
+//       <div className="App">
+//         <TemperatureDisplay tempInKelvin={this.state.temperature} />
+//       </div>
+//     );
+//   }
+
+//   render() {
+//     return (
+//       <div className="App">
+//         <h2>Temperature Conversion App</h2>
+//         <InputZipCode
+//           updateZipCode={this.updateZipCode}
+//           buttonText="Get Temperature"
+//         />
+//         {this.renderDisplay()}
+//       </div>
+//     );
+//   }
+// }
 
 export default App;
