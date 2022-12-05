@@ -14,13 +14,16 @@ class AppUser(AbstractUser):
 
 
 class Category(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, null=False)
     description = models.CharField(max_length=250)
 
 
 class Item(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, null=False)
     description = models.CharField(max_length=250)
     category = models.ForeignKey(
         "Category", related_name="items", on_delete=models.CASCADE
     )
+
+    def __str__(self) -> str:
+        return self.title
