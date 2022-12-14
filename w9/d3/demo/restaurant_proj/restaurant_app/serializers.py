@@ -1,19 +1,57 @@
 from rest_framework import serializers
-from .models import Item, Category
+from .models import Item, Category, AppUser
+
+
+# class UserSerializer(serializers.ModelSerializer):
+#     # username = serializers.EmailField(source="email")
+#     # print(username)
+
+#     class Meta:
+#         model = AppUser
+#         fields = ("id", "username", "password", "email")
+
+# def create(self, validated_data):
+#     user = AppUser(
+#         email=validated_data["email"],
+#         username=validated_data["email"],
+#     )
+#     user.set_password(validated_data["password"])
+#     user.save()
+#     return user
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AppUser
+        fields = ("id", "username", "password", "email")
+
+    def create(self, validated_data):
+        user = AppUser(
+            email=validated_data["email"],
+            username=validated_data["email"],
+        )
+        user.set_password(validated_data["password"])
+        user.save()
+        return user
 
 
 class ItemSerializer(serializers.ModelSerializer):
-    category = serializers.CharField(source="category.title")
+    # category = serializers.CharField(source="*")
+    # category = serializers.RelatedField(many=True, read_only=True)
+    # category = CategorySerializer(many=True, read_only=True)
 
     class Meta:
         model = Item
-        fields = ("id", "title", "description", "category")
+        fields = ("id", "title", "description", "category", "price")
 
 
 class CategorySerializer(serializers.ModelSerializer):
-    # items = ItemSerializer(many=True, read_only=True)
+    items = ItemSerializer(
+        many=True,
+        read_only=True,
+    )
     # items = serializers.SlugRelatedField(many=True, read_only=True)
-    items = serializers.StringRelatedField(many=True, read_only=True)
+    # items = serializers.StringRelatedField(many=True, read_only=True)
 
     class Meta:
         model = Category

@@ -56,8 +56,8 @@ function App() {
   return (
     <div className="App">
       <AppNav />
-      <HomePage articles={articles} />
-      {/* <Router>
+      {/* <HomePage articles={articles} /> */}
+      <Router>
         <Routes>
           <Route path="/" element={<HomePage articles={articles} />} />
           <Route
@@ -69,7 +69,7 @@ function App() {
             element={<SectionPage articles={articles} />}
           />
         </Routes>
-      </Router> */}
+      </Router>
     </div>
   );
 }

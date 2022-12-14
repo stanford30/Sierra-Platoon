@@ -15,12 +15,16 @@ class AppUser(AbstractUser):
 
 class Category(models.Model):
     title = models.CharField(max_length=100, null=False)
-    description = models.CharField(max_length=250)
+    description = models.CharField(max_length=250, blank=True)
+
+    def __str__(self) -> str:
+        return self.title
 
 
 class Item(models.Model):
     title = models.CharField(max_length=100, null=False)
-    description = models.CharField(max_length=250)
+    description = models.CharField(max_length=250, blank=True)
+    price = models.DecimalField(decimal_places=2, max_digits=6)
     category = models.ForeignKey(
         "Category", related_name="items", on_delete=models.CASCADE
     )

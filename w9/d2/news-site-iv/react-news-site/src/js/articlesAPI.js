@@ -15,4 +15,23 @@ export const fetchArticleByID = async (id) => {
     });
 };
 
-fetchArticleByID(1);
+export const fetchArticleBySection = async (sectionName, setArticles) => {
+  const url = `https://hacker-news.firebaseio.com/v0/${sectionName}stories.json?print=pretty`;
+  const res = await axios.get(url);
+  const promises = [];
+  for (let i = 0; i < 10; i++) {
+    promises.push(
+      axios.get(
+        `https://hacker-news.firebaseio.com/v0/item/${res.data[i]}.json`
+      )
+    );
+  }
+  Promise.all(promises).then((responses) => {
+    setArticles(
+      responses.map((response) => {
+        return response.data;
+      })
+    );
+  });
+  // console.log(res.data);
+};

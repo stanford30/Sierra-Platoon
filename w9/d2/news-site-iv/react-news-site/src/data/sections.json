@@ -1,23 +1,14 @@
 [
   {
-    "label": "new"
+    "label": "ask",
+    "value": "ask"
   },
   {
-    "label": "past"
+    "label": "show",
+    "value": "show"
   },
   {
-    "label": "comments"
-  },
-  {
-    "label": "ask"
-  },
-  {
-    "label": "show"
-  },
-  {
-    "label": "jobs"
-  },
-  {
-    "label": "submit"
+    "label": "jobs",
+    "value": "job"
   }
 ]

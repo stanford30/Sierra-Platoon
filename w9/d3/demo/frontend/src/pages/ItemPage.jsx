@@ -6,12 +6,19 @@ function ItemPage() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    axios.get("api/items").then((res) => {
-      console.log(res);
+    axios.get("/api/items/").then((res) => {
+      setItems(res.data);
     });
   }, []);
 
-  return <div>ItemPage</div>;
+  const mapItems = () => items.map((item) => <p>{item.title}</p>);
+
+  return (
+    <div>
+      <h3>Item Page</h3>
+      {mapItems()}
+    </div>
+  );
 }
 
 export default ItemPage;

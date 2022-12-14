@@ -26,12 +26,12 @@ function NavBar() {
       <nav className="supplementary-nav">
         <ul className="supplementary-nav-list">
           <li>
-            <Link className="link" to="#">
+            <Link className="link" to="/addItem">
               Add item
             </Link>
           </li>
           <li>
-            <Link className="link" to="#">
+            <Link className="link" to="/addCategory">
               Add Category
             </Link>
           </li>
