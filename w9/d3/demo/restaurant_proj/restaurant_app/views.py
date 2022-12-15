@@ -127,6 +127,9 @@ def category_detail(request, pk):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
+#
+
+
 @api_view(["GET", "POST"])
 def items(request):
     if request.method == "GET":
