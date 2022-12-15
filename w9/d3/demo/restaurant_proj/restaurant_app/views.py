@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from rest_framework import status
-from django.core import serializers
 
 # from django.http import HttpResponse, JsonResponse
 from .models import Item, Category, AppUser as User
@@ -10,9 +9,9 @@ from .serializers import (
     ItemSerializer,
     UserSerializer,
 )
-import json
 from rest_framework.response import Response
-from django.http import JsonResponse
+from django.contrib.auth import authenticate, login, logout
+
 
 # Create your views here.
 
@@ -54,7 +53,16 @@ def sign_up_user(request):
 @api_view(["POST"])
 def login(request):
     if request.method == "POST":
-        print(request.data)
+        email = request.data["email"]
+        password = request.data["password"]
+        serializer = UserSerializer(data=request.data)
+        # if serializer.is_valid():
+
+        # user = authenticate(username=email, password=password)
+        # if user is not None:
+        #     if user.is_active:
+        #         login(request, user)
+        #         return Response()
 
 
 @api_view(["GET", "POST"])

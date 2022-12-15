@@ -8,5 +8,5 @@ urlpatterns = [
     path("items/<int:pk>/", views.item_detail),
     path("users/", views.Users),
     path("signup/", views.sign_up_user),
-
+    path("login/", views.login),
 ]
