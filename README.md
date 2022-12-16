@@ -1,2 +1,2 @@
 # Sierra-Platoon
-These docs are the 16 weeks of curriculum by Code Platoon, includes code demos, tutorials, and personal solutions.
+These docs includes 16 weeks of curriculum for Sierra Platoon @ code platoon, contains code demos, tutorials, and my personal solutions.
