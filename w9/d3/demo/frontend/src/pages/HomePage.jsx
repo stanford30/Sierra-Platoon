@@ -11,9 +11,9 @@ function Homepage() {
   return (
     <div>
       <h1>Welcome to our Restaurant</h1>
-      <button>Sign Up</button>
+      {/* <button>Sign Up</button>
       <button>Login</button>
-      <button>Log Out</button>
+      <button>Log Out</button> */}
     </div>
   );
 }
